@@ -5,6 +5,7 @@ import Home from './components/Home';
 import YakissobaOptions from './components/Yakissoba'; 
 import MarmitasFitness from './components/MarmitasFitness'; 
 import Checkout from './components/Checkout'; 
+import ReviewOrder from './components/ReviewOrder';  // Importando a nova página de revisão
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -23,9 +24,6 @@ function App() {
     console.log('Carrinho atualizado:', updatedCart);  // Verificando se o carrinho está correto
     setCart(updatedCart); // Atualiza o carrinho
   };
-  
-  
-  
 
   // Função para excluir item do carrinho
   const removeFromCart = (itemName) => {
@@ -36,16 +34,16 @@ function App() {
   return (
     <Router>
       <Navbar cart={cart} setCart={setCart} />
-      
       <div className="min-h-screen bg-gray-100">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/yakissoba" element={<YakissobaOptions addToCart={addToCart} />} />
           <Route path="/marmitas-fitness" element={<MarmitasFitness addToCart={addToCart} />} />
-          <Route 
-            path="/checkout" 
+          <Route
+            path="/checkout"
             element={<Checkout cart={cart} removeFromCart={removeFromCart} />} 
-          /> {/* Passando removeFromCart para o Checkout */}
+          />
+          <Route path="/review-order" element={<ReviewOrder />} /> {/* Página de revisão */}
         </Routes>
       </div>
     </Router>

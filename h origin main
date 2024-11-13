@@ -1,0 +1,11 @@
+[33mcommit 74b0a73a23b4899d6a02749757e601f02c783132[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: Richard Masayuki Terayama <rmterayama.2000@gmail.com>
+Date:   Wed Nov 13 13:54:10 2024 -0400
+
+    Atualizacao vizual e implementacao da pagina final
+
+[33mcommit 8f178d63edba52e97ae6705313dcbbccc8d89d0c[m
+Author: Richard Masayuki Terayama <rmterayama.2000@gmail.com>
+Date:   Tue Nov 12 14:00:31 2024 -0400
+
+    Initialize project using Create React App

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaShoppingCart, FaBars } from 'react-icons/fa';
 
 function Navbar({ cart, setCart }) {
@@ -7,6 +7,7 @@ function Navbar({ cart, setCart }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const cartRef = useRef(null);
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Alternar visibilidade do carrinho
   const toggleCartVisibility = () => {
@@ -42,6 +43,13 @@ function Navbar({ cart, setCart }) {
 
   // Impedir a visibilidade do carrinho na página de checkout
   const isCheckoutPage = location.pathname === '/checkout';
+
+  // Fechar o carrinho quando a página mudar (exceto para checkout)
+  useEffect(() => {
+    if (isCheckoutPage) {
+      setIsCartVisible(false);
+    }
+  }, [location.pathname, isCheckoutPage]);
 
   return (
     <nav className="bg-blue-600 p-4 fixed top-0 left-0 w-full z-50 shadow-md">
