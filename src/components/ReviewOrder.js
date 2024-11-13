@@ -47,6 +47,32 @@ function ReviewOrder() {
     ));
   };
 
+  // Função para gerar a mensagem a ser enviada pelo WhatsApp
+  const generateWhatsappMessage = () => {
+    const itemsList = cart.map(item => `${item.name} x${item.quantity} - ${formatCurrency(item.price * item.quantity)}`).join('\n');
+    const addressInfo = `${address.street}, ${address.neighborhood}, ${address.number}`;
+    const message = `
+      Pedido:
+      ${itemsList}
+
+      Valor Total: ${formatCurrency(total)}
+      Forma de Pagamento: ${paymentMethod}
+      Endereço: ${addressInfo}
+
+      ${paymentMethod === 'Dinheiro' ? `Troco para: ${changeAmount}` : ''}
+    `;
+    return encodeURIComponent(message); // Codificar para envio via URL
+  };
+
+  // Função para enviar o pedido via WhatsApp
+  const handleFinishOrder = () => {
+    const phoneNumber = '55199991651994'; // Número de telefone do WhatsApp (com o código do país)
+    const message = generateWhatsappMessage();
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, '_blank'); // Abre o WhatsApp com a mensagem
+    alert('Pedido enviado para o WhatsApp!');
+  };
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 py-8 px-4">
       <div className="w-full max-w-4xl bg-white p-8 rounded-lg shadow-2xl">
@@ -96,10 +122,7 @@ function ReviewOrder() {
             </button>
 
             <button
-              onClick={() => {
-                // Aqui você pode implementar a lógica para finalizar o pedido, como salvar no backend, etc.
-                alert("Pedido Finalizado!");
-              }}
+              onClick={handleFinishOrder}
               className="bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition w-full"
             >
               Finalizar Pedido
