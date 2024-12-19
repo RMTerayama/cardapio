@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/YakisobaFood/static/css/main.f707649f.css",
+    "main.js": "/YakisobaFood/static/js/main.e25ca751.js",
+    "static/media/salmao.png": "/YakisobaFood/static/media/salmao.e39f00d657805686337d.png",
+    "static/media/carne.png": "/YakisobaFood/static/media/carne.040020293aa4b7a58186.png",
+    "static/media/misto.png": "/YakisobaFood/static/media/misto.f7fa8ca4ba4ed3d1cb0a.png",
+    "static/media/frango.png": "/YakisobaFood/static/media/frango.2b4c63b1fbad2ff58f14.png",
+    "static/media/yakisoba.png": "/YakisobaFood/static/media/yakisoba.8eafdf8e7c801d37d353.png",
+    "static/media/porco.png": "/YakisobaFood/static/media/porco.cab1d8175019d428aa82.png",
+    "static/media/vegetariano.png": "/YakisobaFood/static/media/vegetariano.6a2a33d50e0a0e6e0622.png",
+    "static/media/marmita.png": "/YakisobaFood/static/media/marmita.d0cb9c1f01ada1953012.png",
+    "index.html": "/YakisobaFood/index.html",
+    "main.f707649f.css.map": "/YakisobaFood/static/css/main.f707649f.css.map",
+    "main.e25ca751.js.map": "/YakisobaFood/static/js/main.e25ca751.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f707649f.css",
+    "static/js/main.e25ca751.js"
+  ]
+}
